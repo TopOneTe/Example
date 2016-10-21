@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<package name="struts2" extends="struts-default">
+	
+	<!-- userAction配置 -->
+		<action name="regist" class="com.shop.UserAction.SaveUserAction">
+		    <result name="success">/regist.jsp</result>
+		</action>
+		<action name="login" class="com.shop.UserAction.UserLoginAction">
+		    <result name="success">/index.jsp</result>
+		    <result name="fail">/login.jsp</result>
+		</action>
+		
+		<!-- productSortAction配置 -->
+		<action name="addSort" class="com.shop.UserAction.AddProductSort">
+		    <result name="success">/addProductsort.jsp</result>
+		</action>
+		<action name="getSort" class="com.shop.UserAction.GetSortAction">
+		    <result name="success">/addProduct.jsp</result>
+		</action>
+		
+		
+		<!-- productAction配置 -->
+		<action name="addProduct" class="com.shop.UserAction.AddProductAction">
+		    <result name="success">/addProduct.jsp</result>
+		</action>
+		<action name="showProduct" class="com.shop.UserAction.ShowProduct">
+		    <result name="success">/showProduct.jsp</result>
+		</action>
+	</package>
+</struts>

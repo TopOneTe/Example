@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+        <class name="com.shop.pojos.ProductSort" table="pro_sort_tb">
+            <id name="sortId" column="sort_id">
+                <generator class="native"></generator>
+            </id>
+            
+            <property name="message" column="sort_message"/>
+            <property name="sortName" column="sort_name"/>
+            
+            <set name="pro" inverse="true" cascade="all">
+                <key column="pro_sort"/>
+                <one-to-many class="com.shop.pojos.Product"/>
+            </set>
+        </class>
+    </hibernate-mapping>

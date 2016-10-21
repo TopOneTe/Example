@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+        <class name="com.shop.pojos.Product" table="product_tb">
+            <id name="proId" column="pro_Id">
+                <generator class="native"></generator>
+            </id>
+            
+            <property name="image" column="pro_image"/>
+            <property name="proComplany" column="pro_company"/>
+            <property name="proDepart" column="pro_depart"/>
+            <property name="proName" column="pro_name"/>
+            <property name="proPrice" column="pro_price"/>
+            
+            <many-to-one name="sort" column="pro_sort" class="com.shop.pojos.ProductSort">
+                
+            </many-to-one>
+        </class>
+    </hibernate-mapping>
